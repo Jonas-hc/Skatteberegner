@@ -14,14 +14,19 @@ namespace Skatteberegner
             double beskattetBelob = 0;
             double gaverIalt = andenGave;
 
-            if (julegave < 900)
+            if (julegave > 900)
             {
                 gaverIalt += julegave;
             }
 
+            if (julegave <= 900 && (julegave + andenGave) > 1200)
+            {
+                beskattetBelob = andenGave;
+            }
+
             if (gaverIalt > 1200)
             {
-                beskattetBelob = gaverIalt - 1200;
+                beskattetBelob = gaverIalt;
             }
 
             return beskattetBelob;
