@@ -11,7 +11,20 @@ namespace Skatteberegner
         // Funktionen returnerer det beløb, der skal beskattes (altså ikke selve skatten).
         public double SkatVedJulegave(double julegave, double andenGave)
         {
-            return 0;
+            double beskattetBelob = 0;
+            double gaverIalt = andenGave;
+
+            if (julegave < 900)
+            {
+                gaverIalt += julegave;
+            }
+
+            if (gaverIalt > 1200)
+            {
+                beskattetBelob = gaverIalt - 1200;
+            }
+
+            return beskattetBelob;
         }
     }
 }
